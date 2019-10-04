@@ -212,3 +212,9 @@ target_link_libraries(basic_simple_listener ${catkin_LIBRARIES})
 
 add_executable(basic_logger src/basic_logger.cpp)
 target_link_libraries(basic_logger ${catkin_LIBRARIES})
+
+add_executable(basic_twist_publisher src/basic_twist_publisher.cpp)
+
+target_link_libraries(basic_twist_publisher
+  ${catkin_LIBRARIES}
+)
