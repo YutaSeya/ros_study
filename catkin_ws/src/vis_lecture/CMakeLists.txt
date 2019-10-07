@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(basic_lecture)
+project(vis_lecture)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -104,7 +104,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES basic_lecture
+#  LIBRARIES vis_lecture
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
@@ -122,7 +122,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/basic_lecture.cpp
+#   src/${PROJECT_NAME}/vis_lecture.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -133,7 +133,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/basic_lecture_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/vis_lecture_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -197,54 +197,10 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_basic_lecture.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_vis_lecture.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-add_executable(basic_simple_talker src/basic_simple_talker.cpp)
-add_executable(basic_simple_listener src/basic_simple_listener.cpp)
-
-target_link_libraries(basic_simple_talker ${catkin_LIBRARIES})
-target_link_libraries(basic_simple_listener ${catkin_LIBRARIES})
-
-add_executable(basic_logger src/basic_logger.cpp)
-target_link_libraries(basic_logger ${catkin_LIBRARIES})
-
-add_executable(basic_twist_publisher src/basic_twist_publisher.cpp)
-
-target_link_libraries(basic_twist_publisher
-  ${catkin_LIBRARIES}
-)
-
-add_executable(basic_timing_talker   src/basic_timing_talker.cpp)
-add_executable(basic_timing_listener src/basic_timing_listener.cpp)
-add_executable(basic_timing_bridge   src/basic_timing_bridge.cpp)
-
-target_link_libraries(basic_timing_talker
-  ${catkin_LIBRARIES}
-)
-target_link_libraries(basic_timing_bridge
-  ${catkin_LIBRARIES}
-)
-target_link_libraries(basic_timing_listener
-  ${catkin_LIBRARIES}
-)
-
-add_executable(basic_timer_talker    src/basic_timer_talker.cpp)
-
-target_link_libraries(basic_timer_talker
-  ${catkin_LIBRARIES}
-)
-
-add_executable(basic_array_talker    src/basic_array_talker.cpp)
-add_executable(basic_array_listener  src/basic_array_listener.cpp)
-
-target_link_libraries(basic_array_talker
-  ${catkin_LIBRARIES}
-)
-target_link_libraries(basic_array_listener
-  ${catkin_LIBRARIES}
-)
